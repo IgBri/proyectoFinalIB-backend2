@@ -1,0 +1,4 @@
+.dasboard-admin-container {
+    display: flex;
+    flex-direction: row;
+}

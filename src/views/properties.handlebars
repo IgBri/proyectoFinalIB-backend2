@@ -1,0 +1,29 @@
+<section>
+    {{#if user.isUser}}
+    <div>
+        <div>
+            <h5>Hola {{user.user}}</h5>
+            <p>Sos un usuario con rol USER</p>
+            <a id="buttonCart" href="/cart/{{user.cart}}">Ver carrito</a>
+            <button id="logout">Cerrar sesion</button>
+        </div>
+    </div>
+    {{/if}}
+    <div id="propertiesContainer">
+        {{#each propertyDto}}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <p>{{id}}</p>
+                <p>{{owner}}</p>
+                <h5 class="card-title">{{address.addressName}} {{address.addressNumber}}</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">{{useStatus}}</h6>
+                <p class="card-text">Esta propiedad le pertenece a {{owner.first_name}} {{owner.last_name}}</p>
+                <a href= "/propertyCatalog/{{id}}" class="card-link" id="addToCart">Reservar</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</section>
+
+<link rel="stylesheet" href="/css/properties.css">
+<script src="/js/propertyCatalog.js"></script>

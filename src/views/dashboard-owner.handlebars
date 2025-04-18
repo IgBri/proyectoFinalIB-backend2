@@ -1,0 +1,33 @@
+<section>
+    <div>
+        <div>
+            <h5>Hola {{first_name}}</h5>
+            <p>¿Queres registrar una propiedad? <a href="/registerProperty">Hace click aqui</a></p>
+            <button id="logout">Cerrar sesion</button>
+        </div>
+    </div>
+    <div class="dasboard-admin-container">
+        <p>Propiedades cargadas: {{propertiesOwner.length}}</p>
+        {{#each propertiesOwner}}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{address.addressName}} {{address.addressNumber}}</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Precio: {{price.currency}} {{price.monetaryValue}}</li>
+                <li class="list-group-item">A second item</li>
+                <li class="list-group-item">A third item</li>
+            </ul>
+            <div class="card-body">
+                <button class="deleteButton" data-id="{{_id}}">Eliminar</button>
+                <button>Editar</button>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</section>
+
+<script src="/js/dashboard-owner.js"></script>
+<link rel="stylesheet" href="/css/dashboard-owner.css">

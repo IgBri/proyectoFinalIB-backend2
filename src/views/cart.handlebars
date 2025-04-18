@@ -1,0 +1,39 @@
+<section>
+    <div>
+        <h2 id="cart" data-id="{{cart._id}}">Carrito</h2>
+
+        <div class="containerCart">
+            <div>
+                <p>Carrito de: {{cart.cartUser.first_name}} {{cart.cartUser.last_name}}</p>
+                <button data-id="{{cart._id}}" id="clearButtonCart">Limpiar carrito</button>
+                <a href="/propertyCatalog">Volver al catalogo</a>
+            </div>
+            <div class="containerProperties">
+                {{#each cart.properties}}
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{property.address.addressName}} {{property.address.addressNumber}}</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Dias solicitados:{{property.daysRequested}}</li>
+                        <li class="list-group-item">Dias disponibles: {{property.daysAvaliable}}</li>
+                        <li class="list-group-item">Precio final:</li>
+                    </ul>
+                    <div class="card-body">
+                        <!--<a href="#" class="card-link">Pagar</a>-->
+                        <button class="buttonPay" data-id="{{property._id}}">Pagar</button>
+                        <button data-id="{{_id}}" class="deleteOrder">Eliminar</button>
+                    </div>
+
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</section>
+
+<link rel="stylesheet" href="/css/cart.css">
+<script src="/js/cart.js" defer></script>

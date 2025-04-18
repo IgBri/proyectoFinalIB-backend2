@@ -1,0 +1,29 @@
+<section>
+    <div>
+        <div class="card text-center">
+            <div class="card-header">
+                <span id="cartRef" data-id="{{user.cart}}">Carrito de {{user.user}}</span>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{infoProperty.address.addressName}} {{infoProperty.address.addressNumber}}</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <div>
+                    <span>Dias disponibles: {{infoProperty.daysAvaliable}}</span>
+                    <span>Precio por dia: {{infoProperty.price.currency}} {{infoProperty.price.monetaryValue}}</span>
+                </div>
+                <div>
+                    <div class="quantity-counter">
+                        <button id="restar">-</button>
+                        <input type="number" id="cantidad" value="1" min="1">
+                        <button id="sumar">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-body-secondary">
+                <button data-id="{{infoProperty._id}}" id="addToCart">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="/js/property.js" defer></script>

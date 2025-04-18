@@ -1,0 +1,14 @@
+.containerCart {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-around;
+}
+
+
+.containerProperties {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 15px;
+}

@@ -1,0 +1,48 @@
+<section>
+    <div>
+        <form id="userForm">
+            <div>
+                <label>Nombre</label>
+                <input type="text" name="first_name">
+            </div>
+            <div>
+                <label>Apellido</label>
+                <input type="text" name="last_name">
+            </div>
+            <div>
+                <label>Edad</label>
+                <input type="number" name="age">
+            </div>
+            <div>
+                <label>DNI</label>
+                <input type="number" name="dni">
+            </div>
+            <div>
+                <label>Numero de telefono</label>
+                <input name="phoneNumber" type="number">
+            </div>
+            <div>
+                <label>Tipo de usuario</label>
+                <select name="userCondition">
+                    <option value="owner">Propietario/a</option>
+                    <option value="tenant">Inquilino/a</option>
+                    <option value="user">Usuario/a</option>
+                </select>
+            </div>
+            <div>
+                <label>Correo Electronico</label>
+                <input type="text" name="email">
+            </div>
+            <div>
+                <label>Contraseña</label>
+                <input type="password" name="password">
+            </div>
+
+            <button type="submit">Registrar</button>
+        </form>
+        <a href="/">Volver a vista principal</a>
+    </div>
+</section>
+
+<link rel="stylesheet" href="/css/registerUser.css">
+<script src="/js/register.js" defer></script>
