@@ -54,10 +54,11 @@ form.addEventListener("submit", (e) => {
                 };
             }).then(cartResult => {
                 const cart = cartResult.payload;
+                const {_id, cartUser} = cart;
 
-                fetch(`/api/users/${cart.cartUser}`, {
+                fetch(`/api/users/createTokenLogin`, {
                     method: "PUT",
-                    body: JSON.stringify({ cart }),
+                    body: JSON.stringify( {_id, cartUser} ),
                     headers: {
                         "Content-Type": "application/json"
                     },

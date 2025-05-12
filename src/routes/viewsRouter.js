@@ -10,7 +10,7 @@ const viewsRouter = express.Router();
 viewsRouter.get("/", getIndex);
 viewsRouter.get("/login", getLoginForm);
 viewsRouter.get("/register", getRegisterForm);
-//viewsRouter.get("/propertyCatalog", passportCall("jwt"), showProperties);
+viewsRouter.get("/propertyCatalog", passportCall("jwt"), showProperties);
 viewsRouter.get("/propertyCatalog/:propertyId", passportCall("jwt"), showPropertiesById);
 viewsRouter.get("/dashboard-owner/:oid", authorizationTo("jwt", "owner"), getProfileOwner)
 viewsRouter.get("/registerProperty", authorizationTo("jwt", "owner"), getRegisterPropertyForm);

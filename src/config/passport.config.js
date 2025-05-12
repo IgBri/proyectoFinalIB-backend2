@@ -15,6 +15,14 @@ const initializePassport = () => {
     passport.use("register", new localStrategy( {passReqToCallback: true, usernameField: "dni"}, async (req, username, password, done) => {
         const {first_name, last_name, email, age, dni, phoneNumber, userCondition} = req.body;
 
+
+
+
+        console.log("req.body: ", req.body)
+
+
+
+
         try {
             const existUser = await User.findOne({dni: username});
 
@@ -52,6 +60,7 @@ const initializePassport = () => {
         jwtFromRequest: ExtractJWT.fromExtractors([cookieExtractor]),
         secretOrKey: config.passport_key
     }, async (jwt_payload, done) => {
+        console.log("jwt_payload: ", jwt_payload)
         try {
             return done(null, jwt_payload.user, );
         } catch (error) {

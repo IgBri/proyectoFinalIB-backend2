@@ -9,7 +9,7 @@ usersRouter.get("/", getUsers);
 usersRouter.post("/", saveUser);
 usersRouter.get("/:dni", getUserByDni);
 usersRouter.get("/user/:uid", getUserById);
-usersRouter.put("/:uid", updateUserById);
+usersRouter.put("/createTokenLogin", updateUserById);
 usersRouter.post("/register", passport.authenticate("register", {session: false}), register);
 usersRouter.post("/logout", logout);
 

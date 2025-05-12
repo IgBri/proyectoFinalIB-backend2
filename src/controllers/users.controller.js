@@ -83,7 +83,7 @@ export const logout = async (req, res) => {
 };
 export const updateUserById = async (req, res) => {
     try {
-        const {_id, cartUser} = req.body.cart;
+        const {_id, cartUser} = req.body;
         const updateUser = await userService.update(_id, cartUser)
 
         if(!updateUser){

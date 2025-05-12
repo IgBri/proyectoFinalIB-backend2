@@ -25,7 +25,8 @@ addToCart.addEventListener("click", (e) => {
     fetch(`/api/properties/${propertyId}`, {
         method: "PUT",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            //"Authorization": `Bearer ${token}`
         },
         body: JSON.stringify({qtyDays})
     }).then( data => {

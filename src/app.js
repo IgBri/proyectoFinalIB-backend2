@@ -1,4 +1,5 @@
 import express from "express";
+//import cors from "cors";
 
 import passport from "passport";
 import initializePassport from "./config/passport.config.js";
@@ -19,6 +20,7 @@ import {connectMongoDB} from "./utils.js";
 
 const app = express();
 
+//app.use(cors());
 app.use(cookieParser("ClaveDeCookiePrueba"))
 
 app.use(express.json());

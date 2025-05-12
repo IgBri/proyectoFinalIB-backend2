@@ -82,6 +82,11 @@ export const passportCall = (strategy) => {
 
 export const authorizationTo = (strategy, userAuth) => {
     return async (req, res, next) => {
+
+        console.log("Authorization header:", req.headers.authorization);
+
+
+
         passport.authenticate(strategy, function (err, user, info) {
             console.log(`Iniciando estrategia JWT para autorizar a ${userAuth}`)
             if(err){
